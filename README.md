@@ -4,6 +4,7 @@
 
 ```js
 var target = {};
+
 var result = objtree(target, {
   // Maximum level of recursion
   maxlevel: 10,
@@ -22,6 +23,62 @@ result.asText(); // returns a formatted text representation
 result.downloadText(filename); // triggers a browser file download with the formatted text
 ```
 
-# Examples
+# Example
 
-TODO
+```js
+var target = {
+  testBool: true,
+  testInt: 15,
+  testFloat: -3.6,
+  testString: "text",
+  testFunction: function(a, b, c){},
+  testArray1: [ 1, 2, true, "abc" ],
+  testArray2: [
+    { hi: "there" },
+    [ 0, 1, [false] ]
+  ],
+  testObject: {
+    abc: [ 1, 2 ]
+  }
+};
+
+target.testObject["testSpecial-Name!"] = null;
+
+function MyClass(){}
+
+MyClass.CONSTANT = true;
+MyClass.data = 10;
+MyClass.prototype.a = function(){};
+MyClass.prototype.b = function(){};
+
+target["testClass"] = MyClass;
+```
+
+Calling `objtree(target).asText()` with no additional settings yields (ordered by type and then name):
+
+```
+OBJECT TREE
+===========
+|--  testArray2
+  |--  testArray2['0']
+    |-- [var] testArray2['0'].hi > there
+  |--  testArray2['1']
+    |-- [arr] testArray2['1']['2'] > [ false ]
+    |-- [var] testArray2['1']['0'] > 0
+    |-- [var] testArray2['1']['1'] > 1
+|--  testObject
+  |-- [arr] testObject.abc                  > [ 1, 2 ]
+  |-- [var] testObject['testSpecial-Name!'] > (null)
+|-- [fun] testClass()
+  |--  testClass.prototype
+    |-- [fun] testClass.prototype['a']()
+    |-- [fun] testClass.prototype['b']()
+  |-- [var] testClass.CONSTANT > true
+  |-- [var] testClass.data     > 10
+|-- [fun] testFunction(a, b, c)
+|-- [arr] testArray1 > [ 1, 2, true, abc ]
+|-- [var] testBool   > true
+|-- [var] testFloat  > -3.6
+|-- [var] testInt    > 15
+|-- [var] testString > text
+```
