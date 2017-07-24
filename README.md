@@ -1,4 +1,4 @@
-`objtree` is a script that generates a text tree representation of an object. The script can be executed in a browser console.
+`objtree` is a script that generates a text tree representation of an object. The script can be executed in a browser console or imported as an `npm` module.
 
 # How to Use
 
