@@ -74,8 +74,8 @@ OBJECT TREE
   |-- [var] testObject['testSpecial-Name!'] > (null)
 |-- [fun] testClass()
   |--  testClass.prototype
-    |-- [fun] testClass.prototype['a']()
-    |-- [fun] testClass.prototype['b']()
+    |-- [fun] testClass.prototype.a()
+    |-- [fun] testClass.prototype.b()
   |-- [var] testClass.CONSTANT > true
   |-- [var] testClass.data     > 10
 |-- [fun] testFunction(a, b, c)

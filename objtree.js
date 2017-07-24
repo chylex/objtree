@@ -131,7 +131,7 @@
           return v === 0 ? +(entry1[0] > entry2[0]) : v;
         };
         
-        var keyRegex = /^[a-z_$][a-z0-9_$]+$/i;
+        var keyRegex = /^[a-z_$][a-z0-9_$]*$/i;
         
         var getKeyAccess = function(key){
           return keyRegex.test(key) ? "."+key : "['"+key+"']";
