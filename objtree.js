@@ -14,6 +14,7 @@
   var objtree = function(target, {
     maxlevel = 10,
     grandparent = "",
+    indentstr = "  ",
     exclude = []
   } = {}){
     var excludeRules = exclude.map(rule => new RegExp(rule));
@@ -142,7 +143,7 @@
         
         var addLines = function(node, parents, level){
           let entries = Object.entries(node);
-          let prefix = "  ".repeat(level)+"|-- ";
+          let prefix = indentstr.repeat(level)+"|-- ";
           
           let longest = Math.max.apply(null, entries
             .filter(entry => varTypes.includes(entry[1].type))

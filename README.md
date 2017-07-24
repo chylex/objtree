@@ -12,6 +12,9 @@ var result = objtree(target, {
   // Prefixed before every name (ex. window)
   grandparent: "",
   
+  // String used to indent lines to display the level of nesting
+  indentstr: "  ",
+  
   // Array of strings (behaving like regular expressions) matched against names to exclude
   // Use / to separate nested objects (ex. {a:{b:{c:true}}} will be a/b/c)
   // Note that grandparent is not included in the name matching process
