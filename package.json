@@ -1,5 +1,5 @@
 {
-  "name": "objtree",
+  "name": "@deckhack/objtree",
   "version": "1.0.0",
   "description": "Generate a nicely formatted representation of an object tree",
   "main": "objtree.js",
