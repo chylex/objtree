@@ -1,0 +1,26 @@
+{
+  "name": "@deckhack/objtree",
+  "version": "1.0.0",
+  "description": "Generate a nicely formatted representation of an object tree",
+  "main": "objtree.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chylex/objtree.git"
+  },
+  "keywords": [
+    "object",
+    "tree",
+    "view",
+    "generator",
+    "browser"
+  ],
+  "author": "Daniel Chýlek <contact@chylex.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chylex/objtree/issues"
+  },
+  "homepage": "https://github.com/chylex/objtree#readme"
+}
